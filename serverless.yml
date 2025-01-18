@@ -1,0 +1,15 @@
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: serverless-project1
+frameworkVersion: '4'
+
+provider:
+  name: aws
+  runtime: python3.12
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - httpApi:
+          path: /
+          method: get
